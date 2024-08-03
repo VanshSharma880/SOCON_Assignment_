@@ -10,7 +10,6 @@ import toast from "react-hot-toast";
 const ViewDetailComponent = () => {
   const { id } = useParams();
   const localdata = JSON.parse(localStorage.getItem("data"));
-  // console.log(localdata)
   const product = localdata?.find((item) => item.id == id);
   const [favorites, setFavorites] = useState(() => {
     const storedFavorites = localStorage.getItem("favorites");

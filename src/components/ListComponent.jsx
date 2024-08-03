@@ -15,8 +15,8 @@ const ListComponent = () => {
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
   
-  const [limit] = useState(15);  // Fixed limit per page
-  const [skip, setSkip] = useState(0);  // Skip value for pagination
+  const [limit] = useState(15);  
+  const [skip, setSkip] = useState(0); 
   const { data, isPending, isError } = useProductList(limit, skip);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const ListComponent = () => {
       localStorage.setItem("data", myJSON);
     }
   }, [data]);
-
+// It filters a data based on inputs
   useEffect(() => {
     if (input) {
       const newFilterArray = data?.products.filter((product) =>
@@ -42,6 +42,7 @@ const ListComponent = () => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
+  // It addes Favorite product in the list 
   const toggleFavorite = (product) => {
     setFavorites((prevFavorites) => {
       if (prevFavorites.find((item) => item.id === product.id)) {
@@ -55,7 +56,7 @@ const ListComponent = () => {
     });
   };
 
-
+//Buttons to go to previse Page and next  page
   const handleNextPage = () => {
     setSkip((prevSkip) => prevSkip + limit);
   };
