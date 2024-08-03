@@ -18,7 +18,7 @@ const ListComponent = () => {
   const [limit] = useState(15);  
   const [skip, setSkip] = useState(0); 
   const { data, isPending, isError } = useProductList(limit, skip);
-
+// It Add's data to local Storage so we can Access it from there 
   useEffect(() => {
     if (data) {
       setFilterdata(data.products);
@@ -42,7 +42,7 @@ const ListComponent = () => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  // It addes Favorite product in the list 
+  // It addes Favorite product in the list And Conditional Chack
   const toggleFavorite = (product) => {
     setFavorites((prevFavorites) => {
       if (prevFavorites.find((item) => item.id === product.id)) {

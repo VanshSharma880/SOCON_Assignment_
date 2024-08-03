@@ -1,11 +1,9 @@
 import { Rate } from "antd";
 import React from "react";
+import formatDate from "../services/formatDate";
 
 const CustomersReviews = ({product}) => {
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+
   return (
     <div className="mt-6">
       <h3 className="flex items-center w-full pb-2">

@@ -20,6 +20,7 @@ const ViewDetailComponent = () => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
+  // It addes Favorite product in the list And Conditional Chack
   const toggleFavorite = () => {
     setFavorites((prevFavorites) => {
       if (prevFavorites.find((item) => item.id === product.id)) {
@@ -33,6 +34,7 @@ const ViewDetailComponent = () => {
     });
   };
 
+ // If the Perticular Product Not Found it shows this
   if (!product) {
     return (
       <div className="flex justify-center items-center h-screen">
