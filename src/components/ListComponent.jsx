@@ -49,7 +49,7 @@ const ListComponent = () => {
       } else if (prevFavorites.length < 5) {
         return [...prevFavorites, product];
       } else {
-        toast.error("Only 5 Products can Added");
+        toast.error("Only 5 Products Can be Added");
         return prevFavorites;
       }
     });
