@@ -127,7 +127,7 @@ const ListComponent = () => {
         </button>
         <button
           onClick={handleNextPage}
-          disabled={filterdata.length < limit}
+          disabled={filterdata?.length < limit}
           className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
         >
           Next

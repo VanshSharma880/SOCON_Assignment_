@@ -34,7 +34,7 @@ const ViewDetailComponent = () => {
     });
   };
 
- // If the Perticular Product Not Found it shows this
+  // If the Perticular Product Not Found it shows this
   if (!product) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -55,21 +55,21 @@ const ViewDetailComponent = () => {
               <div className="h-[460px] rounded-lg bg-gray-300  mb-4">
                 <img
                   className="w-full h-full object-cover"
-                  src={product.images[0]}
-                  alt={product.title}
+                  src={product?.images[0]}
+                  alt={product?.title}
                 />
               </div>
               <div className="flex -mx-2 mb-4 justify-center mt-5">
                 <div className="w-1/2 px-2">
                   <button
                     className={`w-full bg-gray-900 text-white py-2 px-4 rounded-full font-bold ${
-                      favorites.find((item) => item.id === product.id)
+                      favorites.find((item) => item?.id === product?.id)
                         ? "text-white bg-red-600"
                         : "text-gray-600"
                     }`}
                     onClick={toggleFavorite}
                   >
-                    {favorites.find((item) => item.id === product.id)
+                    {favorites.find((item) => item?.id === product?.id)
                       ? "Remove Favorite"
                       : "Mark Favorite"}
                   </button>
@@ -78,7 +78,7 @@ const ViewDetailComponent = () => {
             </div>
             <div className="md:flex-1 px-4">
               <h2 className="text-4xl font-bold text-gray-800 mb-2">
-                {product.title}
+                {product?.title}
               </h2>
               <p className="text-gray-600  text-sm mb-4"></p>
               <div className="flex mb-4">
@@ -86,14 +86,14 @@ const ViewDetailComponent = () => {
                   <span className="font-bold text-gray-700">Brand Name:</span>
                   <span className="text-red-600 font-bold">
                     {" "}
-                    {product.brand}
+                    {product?.brand ?? "Not Available"}
                   </span>
                 </div>
                 <div className="mr-4">
                   <span className="font-bold text-gray-700">Price:</span>
                   <span className="text-green-600 font-bold">
                     {" "}
-                    ${product.price}
+                    ${product?.price}
                   </span>
                 </div>
                 <div>
@@ -101,7 +101,7 @@ const ViewDetailComponent = () => {
                     Availability:{" "}
                   </span>
                   <span className="text-gray-500 font-bold">
-                    {product.availabilityStatus}
+                    {product?.availabilityStatus}
                   </span>
                 </div>
               </div>
@@ -110,20 +110,20 @@ const ViewDetailComponent = () => {
                   Product Description
                 </span>
                 <p className="text-gray-600 text-sm mt-2">
-                  {product.description}
+                  {product?.description}
                 </p>
               </div>
               <div className="flex space-x-16 justify-center">
                 <div className="flex items-center space-x-2">
                   <GoShieldCheck className="text-xl text-gray-700" />
                   <span className="font-bold text-gray-700">
-                    {product.warrantyInformation}
+                    {product?.warrantyInformation}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <LiaShippingFastSolid className="text-xl text-gray-700" />
                   <span className="font-bold text-gray-700">
-                  {product.shippingInformation}
+                    {product?.shippingInformation}
                   </span>
                 </div>
               </div>

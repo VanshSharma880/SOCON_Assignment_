@@ -18,7 +18,7 @@ const CustomersReviews = ({product}) => {
             <p>
               <Rate disabled defaultValue={review?.rating} />
             </p>
-            <p>"{review.comment}"</p>
+            <p>"{review?.comment}"</p>
 
             <p>{formatDate(review?.date)}</p>
           </div>
