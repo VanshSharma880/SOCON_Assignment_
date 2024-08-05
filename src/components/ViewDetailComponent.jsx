@@ -52,7 +52,7 @@ const ViewDetailComponent = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
-              <div className="h-[460px] rounded-lg bg-gray-300  mb-4">
+              <div className="h-[300px] md:h-[460px] rounded-lg bg-gray-300 mb-4">
                 <img
                   className="w-full h-full object-cover"
                   src={product?.images[0]}
@@ -60,7 +60,7 @@ const ViewDetailComponent = () => {
                 />
               </div>
               <div className="flex -mx-2 mb-4 justify-center mt-5">
-                <div className="w-1/2 px-2">
+                <div className="w-full md:w-1/2 px-2">
                   <button
                     className={`w-full bg-gray-900 text-white py-2 px-4 rounded-full font-bold ${
                       favorites.find((item) => item?.id === product?.id)
@@ -77,11 +77,11 @@ const ViewDetailComponent = () => {
               </div>
             </div>
             <div className="md:flex-1 px-4">
-              <h2 className="text-4xl font-bold text-gray-800 mb-2">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-2">
                 {product?.title}
               </h2>
-              <p className="text-gray-600  text-sm mb-4"></p>
-              <div className="flex mb-4">
+              <p className="text-gray-600 text-sm mb-4"></p>
+              <div className="flex flex-wrap mb-4">
                 <div className="mr-4">
                   <span className="font-bold text-gray-700">Brand Name:</span>
                   <span className="text-red-600 font-bold">
@@ -113,7 +113,7 @@ const ViewDetailComponent = () => {
                   {product?.description}
                 </p>
               </div>
-              <div className="flex space-x-16 justify-center">
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-16 justify-center mt-4">
                 <div className="flex items-center space-x-2">
                   <GoShieldCheck className="text-xl text-gray-700" />
                   <span className="font-bold text-gray-700">
