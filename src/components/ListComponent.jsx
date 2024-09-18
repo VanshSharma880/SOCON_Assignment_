@@ -8,6 +8,7 @@ import useProductList from "../services/productsAPI";
 import toast from "react-hot-toast";
 
 const ListComponent = () => {
+  
   const [input, setInput] = useState("");
   const [filterdata, setFilterdata] = useState([]);
   const [favorites, setFavorites] = useState(() => {
